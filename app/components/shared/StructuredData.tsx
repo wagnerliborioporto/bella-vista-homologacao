@@ -1,12 +1,16 @@
 import { baseWhatsAppUrl } from '@/app/lib/constants';
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  'https://bella-vista-homologacao.vercel.app';
+
 const propertySchema = {
   '@context': 'https://schema.org',
   '@type': 'ApartmentComplex',
-  name: 'Bella Vista Beach Residence',
+  name: 'Bella Vista Beach Residence — Homologação',
   description:
-    'Stúdios e apartamentos de 2 e 3 quartos com infraestrutura de resort em Coroa Vermelha.',
-  url: 'https://bellavistaresidence.com.br',
+    'Ambiente de homologação do Bella Vista Beach Residence em Coroa Vermelha.',
+  url: siteUrl,
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Santa Cruz Cabrália',
