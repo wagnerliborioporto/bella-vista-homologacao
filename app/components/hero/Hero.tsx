@@ -39,55 +39,62 @@ export const Hero = ({ copy, whatsappLink }: Props) => {
   return (
     <section
       id='inicio'
-      className='grain grain-soft relative flex min-h-[100svh] items-start overflow-hidden bg-[#07131D] pt-24 md:min-h-screen md:items-center md:pt-20'
+      className='grain grain-soft relative flex min-h-[78svh] items-center overflow-hidden bg-[#07131D] pt-24 md:min-h-[82vh] md:pt-20'
     >
       <HeroVideo />
-      <div className='absolute inset-0 bg-gradient-to-b from-black/18 via-[#061825]/16 to-transparent lg:from-black/12 lg:via-[#061825]/10' />
-      <div className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(198,155,78,0.035),transparent_55%)] lg:opacity-28' />
-      <div className='absolute inset-0 bg-[linear-gradient(120deg,rgba(6,24,37,0.14),rgba(246,241,234,0.03)_45%,rgba(183,146,90,0.05)_100%)] lg:opacity-24' />
-      <div className='absolute inset-0 hidden lg:block lg:bg-[linear-gradient(90deg,rgba(5,14,22,0.2)_0%,rgba(5,14,22,0.06)_55%,rgba(5,14,22,0.02)_100%)]' />
+
+      <div className='absolute inset-0 bg-gradient-to-r from-[#06121d]/88 via-[#07131d]/58 to-[#07131d]/18' />
+      <div className='absolute inset-0 bg-gradient-to-t from-[#07131D]/72 via-transparent to-black/20' />
+      <div className='absolute inset-0 bg-[radial-gradient(circle_at_68%_38%,rgba(183,146,90,0.13),transparent_38%)]' />
       <div className='absolute inset-0 vignette' />
-      <div className='relative z-10 mx-auto w-full max-w-6xl px-6 pb-28 pt-24 text-white md:pb-36'>
-        <div className='grid gap-12 lg:min-h-[70vh] lg:flex lg:items-center lg:justify-center'>
-          <div className='order-1 text-center lg:text-center'>
-            <div className='inline-block w-full max-w-[640px] rounded-[28px] border border-white/10 bg-black/10 p-6 backdrop-blur-sm md:p-7 lg:mx-auto lg:w-[min(92vw,920px)] lg:max-w-[920px] lg:rounded-[28px] lg:border-white/10 lg:bg-[rgba(10,20,30,0.45)] lg:p-14 lg:backdrop-blur-[18px] lg:shadow-[0_28px_70px_rgba(4,10,16,0.45),0_0_30px_rgba(183,146,90,0.08)]'>
-              <Reveal>
-                <p className='text-center text-[0.6rem] uppercase tracking-[0.5em] text-white/60 lg:mx-auto lg:max-w-[720px] lg:text-center lg:tracking-[0.6em] lg:text-white/55'>
-                  {copy.eyebrow}
-                </p>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <h1 className='hero-title-glow mt-4 text-balance text-4xl font-medium leading-[1.2] tracking-[-0.02em] md:text-5xl lg:mx-auto lg:max-w-[600px] lg:text-[clamp(40px,4.4vw,68px)] lg:leading-[1.05] lg:tracking-[-0.03em] lg:font-semibold'>
-                  {copy.title.split('\n').map((line) => (
-                    <span key={line} className='block'>
-                      {line}
-                    </span>
-                  ))}
-                </h1>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <p className='mt-6 max-w-[620px] text-sm text-white/80 md:text-base lg:hidden'>
-                  {copy.subtitle}
-                </p>
-                <p className='mt-8 hidden max-w-[520px] text-[18px] text-white/85 lg:mx-auto lg:block lg:leading-[1.6]'>
-                  {copy.subtitleDesktop}
-                </p>
-              </Reveal>
-              <Reveal delay={0.3} className='mt-10 flex justify-center lg:mt-10 lg:justify-center'>
-                <a
-                  href={whatsappLink}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='hero-cta-glow inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-[#0B2A3A] px-7 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(10,46,70,0.22)] transition duration-500 hover:-translate-y-0.5 hover:shadow-[0_0_18px_rgba(183,146,90,0.45)] lg:w-auto lg:bg-gradient-to-r lg:from-[#0B2A3A] lg:to-[#0A2231] lg:px-9 lg:py-4'
-                >
-                  <span className='lg:hidden'>{copy.primaryCta}</span>
-                  <span className='hidden lg:inline'>{copy.primaryCtaDesktop}</span>
-                </a>
-              </Reveal>
-            </div>
-          </div>
+
+      <div className='relative z-10 mx-auto w-full max-w-6xl px-6 py-16 text-white md:px-8 lg:py-20'>
+        <div className='max-w-[760px] text-center md:text-left'>
+          <Reveal>
+            <p className='text-[0.62rem] uppercase tracking-[0.48em] text-white/65 md:text-[0.7rem] md:tracking-[0.55em]'>
+              {copy.eyebrow}
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <h1 className='hero-title-glow mt-5 text-balance text-[clamp(2.7rem,7vw,5.4rem)] font-semibold leading-[0.98] tracking-[-0.045em]'>
+              {copy.title.split('\n').map((line) => (
+                <span key={line} className='block'>
+                  {line}
+                </span>
+              ))}
+            </h1>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <p className='mx-auto mt-6 max-w-[640px] text-base leading-relaxed text-white/82 md:mx-0 md:mt-7 md:text-[1.1rem] md:leading-[1.65]'>
+              {copy.subtitleDesktop}
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.3} className='mt-8 flex justify-center md:justify-start'>
+            <a
+              href={whatsappLink}
+              target='_blank'
+              rel='noreferrer'
+              className='hero-cta-glow inline-flex items-center justify-center rounded-full border border-white/20 bg-[#0B2A3A]/88 px-8 py-3.5 text-sm font-semibold text-white shadow-[0_16px_38px_rgba(4,13,20,0.28)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-[#B7925A]/55 hover:shadow-[0_0_22px_rgba(183,146,90,0.32)]'
+            >
+              {copy.primaryCtaDesktop}
+            </a>
+          </Reveal>
         </div>
       </div>
+
+      <a
+        href='#contexto'
+        aria-label='Rolar para conhecer o empreendimento'
+        className='absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1 text-[0.58rem] uppercase tracking-[0.34em] text-white/55 transition hover:text-white/85'
+      >
+        <span>Conheça</span>
+        <span aria-hidden='true' className='text-lg leading-none'>
+          ↓
+        </span>
+      </a>
     </section>
   );
 };
