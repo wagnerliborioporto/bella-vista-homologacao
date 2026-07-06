@@ -29,12 +29,13 @@ export const Navigation = ({
   onLocaleChange,
 }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
   return (
     <header className='fixed inset-x-0 top-0 z-50 overflow-visible border-b border-white/5 bg-[#07131D]/85 backdrop-blur-lg shadow-[0_8px_24px_rgba(5,12,18,0.35)] md:bg-[rgba(8,18,28,0.65)]'>
       <nav className='relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3 text-white md:px-6 md:py-4 lg:py-6'>
         <Image
-          src='/logo.png'
+          src={`${basePath}/logo.png`}
           alt='Bella Vista'
           width={160}
           height={48}
