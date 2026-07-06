@@ -1,6 +1,7 @@
 import type { PresetKey, SimulatorValues } from '@/app/types';
 
-export const heroPoster = '/images/hero/hero-poster.jpg';
+export const heroPoster =
+  'https://res.cloudinary.com/dwedcl97k/video/upload/so_0,f_jpg,w_1600/v1769199580/Design_sem_nome_-_2026-01-23T171932.339_fjulxo.mp4';
 
 export const heroVideoSources = {
   mobile:
@@ -10,32 +11,35 @@ export const heroVideoSources = {
 };
 
 export const blurDataUrl =
-  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjMGYxNjIwIi8+PC9zdmc+';
+  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZyI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjMGYxNjIwIi8+PC9zdmc+';
 
 export const showcaseImages = {
   studio: [
-    '/images/showcase/studio-1.jpg',
-    '/images/showcase/studio-2.jpg',
-    '/images/showcase/studio-3.jpg',
+    'https://i.postimg.cc/mksDjFhJ/Whats-App-Image-2026-01-22-at-12-04-21.jpg',
+    'https://i.postimg.cc/GpTm1jyg/Whats-App-Image-2026-01-22-at-12-04-21-(2).jpg',
+    'https://i.postimg.cc/mDNRbp2p/Whats-App-Image-2026-01-22-at-12-04-21-(1).jpg',
   ],
   apt2: [
-    '/images/showcase/apt-2-1.jpg',
-    '/images/showcase/apt-2-2.jpg',
+    'https://i.postimg.cc/pV5VhCch/Whats-App-Image-2026-01-22-at-12-04-20.jpg',
+    'https://i.postimg.cc/vZYdztXF/Whats-App-Image-2026-01-22-at-12-04-20-(1).jpg',
   ],
-  apt3: ['/images/showcase/apt-3-1.png', '/images/showcase/apt-3-2.png'],
+  apt3: [
+    'https://i.postimg.cc/LsrVzVfh/CASA-TIPO-E-5.png',
+    'https://i.postimg.cc/xTtysQMH/CASA-TIPO-E-6.png',
+  ],
   amenities: [
-    '/images/showcase/amenities-1.png',
-    '/images/showcase/amenities-2.png',
-    '/images/showcase/amenities-3.png',
-    '/images/showcase/amenities-4.png',
+    'https://i.postimg.cc/kX7Z3XSm/Design-sem-nome-2026-01-24T013513-644.png',
+    'https://i.postimg.cc/6QBTCZ4p/Design-sem-nome-2026-01-24T013506-098.png',
+    'https://i.postimg.cc/gJTJ9BM5/Design-sem-nome-2026-01-24T013459-346.png',
+    'https://i.postimg.cc/qq67pXS1/Design-sem-nome-2026-01-24T013356-074.png',
   ],
 };
 
 export const progressImages = [
-  '/images/progress/progress-1.jpg',
-  '/images/progress/progress-2.jpg',
-  '/images/progress/progress-3.jpg',
-  '/images/progress/progress-4.jpg',
+  'https://i.postimg.cc/bwQR1PBD/20251204-082816-(1).jpg',
+  'https://i.postimg.cc/tT7mRvNb/20251204-082550-(1).jpg',
+  'https://i.postimg.cc/9fwJvwmZ/20251204-082247-(1).jpg',
+  'https://i.postimg.cc/90rCyBPd/20251113-080300.jpg',
 ];
 
 export const simulatorPresets: { key: PresetKey; values: SimulatorValues }[] = [
