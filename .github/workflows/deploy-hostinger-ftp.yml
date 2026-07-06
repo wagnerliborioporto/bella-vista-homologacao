@@ -37,6 +37,7 @@ jobs:
       - name: Gerar site estático
         env:
           GITHUB_PAGES: 'true'
+          NEXT_PUBLIC_BASE_PATH: /bella-vista-homologacao
           NEXT_PUBLIC_SITE_URL: https://wagnerliborioporto.github.io/bella-vista-homologacao
           NEXT_PUBLIC_ENABLE_FORMS: 'false'
         run: npx next build --webpack
