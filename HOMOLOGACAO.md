@@ -6,8 +6,8 @@ Esta cópia foi preparada para testes sem alterar o site oficial.
 
 - Indexação desativada no metadata do Next.js.
 - `public/robots.txt` bloqueia todos os robôs.
-- GitHub Actions deve permanecer desativado neste repositório.
-- Scripts de deploy automático foram removidos do `package.json`.
+- GitHub Actions habilitado somente para publicar a homologação no GitHub Pages.
+- Scripts antigos de deploy automático foram removidos do `package.json`.
 - Formulário desativado por padrão para não enviar mensagens ao Formspree original.
 - Configuração do Tailwind corrigida para ler a pasta `app`.
 
@@ -28,6 +28,16 @@ npm run build
 ```
 
 O resultado será criado em `out/` e copiado para `dist/`.
+
+## Publicação
+
+A homologação é publicada automaticamente pelo workflow do GitHub Pages após alterações na branch `main`.
+
+Endereço previsto:
+
+```text
+https://wagnerliborioporto.github.io/bella-vista-homologacao/
+```
 
 ## Ativar formulário de teste
 
