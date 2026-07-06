@@ -82,7 +82,8 @@ export const baseWhatsAppUrl = `https://wa.me/${
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '557399833471'
 }`;
 
-export const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? 'mgolwpwv';
+export const formsEnabled = process.env.NEXT_PUBLIC_ENABLE_FORMS === 'true';
+export const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '';
 
 export const languageOptions: { value: 'pt' | 'en' | 'it'; label: string; name: string }[] =
   [

@@ -1,7 +1,7 @@
 {
-  "name": "solar-energy",
+  "name": "bella-vista-homologacao",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "next dev",
@@ -10,9 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "assets:download": "node scripts/download-images.js",
-    "assets:optimize": "node scripts/optimize-images.mjs",
-    "deploy:cf": "wrangler pages deploy dist --project-name=solarenergy-5h5 --branch=production",
-    "deploy:cf:preview": "wrangler pages deploy dist --project-name=solarenergy-5h5 --branch=preview"
+    "assets:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
