@@ -36,6 +36,14 @@ const Reveal = ({
 };
 
 export const Hero = ({ copy, whatsappLink }: Props) => {
+  const isPortuguese = copy.eyebrow === 'Costa do Descobrimento · Bahia';
+  const displayTitle = isPortuguese
+    ? 'Viva perto do mar.\nInvista no futuro.'
+    : copy.title;
+  const displaySubtitle = isPortuguese
+    ? 'Studios e apartamentos na Costa do Descobrimento, com localização estratégica e alto potencial de valorização.'
+    : copy.subtitleDesktop;
+
   return (
     <section
       id='inicio'
@@ -58,7 +66,7 @@ export const Hero = ({ copy, whatsappLink }: Props) => {
 
           <Reveal delay={0.1}>
             <h1 className='hero-title-glow mt-5 text-balance text-[clamp(2.7rem,7vw,5.4rem)] font-semibold leading-[0.98] tracking-[-0.045em]'>
-              {copy.title.split('\n').map((line) => (
+              {displayTitle.split('\n').map((line) => (
                 <span key={line} className='block'>
                   {line}
                 </span>
@@ -68,7 +76,7 @@ export const Hero = ({ copy, whatsappLink }: Props) => {
 
           <Reveal delay={0.2}>
             <p className='mx-auto mt-6 max-w-[640px] text-base leading-relaxed text-white/82 md:mx-0 md:mt-7 md:text-[1.1rem] md:leading-[1.65]'>
-              {copy.subtitleDesktop}
+              {displaySubtitle}
             </p>
           </Reveal>
 
@@ -90,7 +98,7 @@ export const Hero = ({ copy, whatsappLink }: Props) => {
         aria-label='Rolar para conhecer o empreendimento'
         className='absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1 text-[0.58rem] uppercase tracking-[0.34em] text-white/55 transition hover:text-white/85'
       >
-        <span>Conheça</span>
+        <span>{isPortuguese ? 'Conheça' : 'Explore'}</span>
         <span aria-hidden='true' className='text-lg leading-none'>
           ↓
         </span>
