@@ -8,6 +8,7 @@ const DEFAULT_WIDTHS = [480, 768, 1024, 1440];
 const normalizeExt = (ext: string) => (ext === 'jpeg' ? 'jpg' : ext);
 
 const getBaseInfo = (src: string) => {
+  if (/^https?:\/\//i.test(src)) return null;
   const match = src.match(/^(.*)\.(jpe?g|png|webp)$/i);
   if (!match) return null;
   return {
@@ -36,9 +37,7 @@ export const OptimizedImage = ({ src, widths, onError, ...props }: Props) => {
   const [webpSupported, setWebpSupported] = useState(false);
   const [webpFailed, setWebpFailed] = useState(false);
   const widthList = widths ?? DEFAULT_WIDTHS;
-  const [selectedWidth, setSelectedWidth] = useState(
-    widthList[widthList.length - 1]
-  );
+  const [selectedWidth, setSelectedWidth] = useState(widthList[widthList.length - 1]);
 
   useEffect(() => {
     setWebpSupported(supportsWebp());
@@ -66,7 +65,7 @@ export const OptimizedImage = ({ src, widths, onError, ...props }: Props) => {
   }, [info, selectedWidth, src, webpFailed, webpSupported]);
 
   if (!info) {
-    return <Image src={src} onError={onError} {...props} />;
+    return <Image src={src} onError={onError} unoptimized {...props} />;
   }
 
   return (
