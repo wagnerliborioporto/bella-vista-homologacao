@@ -91,6 +91,9 @@ export const ShowcaseCard = ({
             </motion.div>
           </AnimatePresence>
           <div className='absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/70 via-black/20 to-transparent' />
+          <span className='absolute right-3 top-3 rounded-full border border-white/15 bg-black/50 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/80 backdrop-blur-md'>
+            {images.length} fotos
+          </span>
         </div>
         <div className='space-y-3 p-6'>
           <span className='inline-flex rounded-full border border-[var(--gold)]/35 bg-white/5 px-3 py-1 text-[0.6rem] uppercase tracking-[0.4em] text-[rgba(201,164,106,0.95)]'>
@@ -110,6 +113,7 @@ export const ShowcaseCard = ({
         label={label}
         title={title}
         desc={desc}
+        images={images}
         details={details}
         detailsCloseLabel={detailsCloseLabel}
         dialogLabel={dialogLabel}
