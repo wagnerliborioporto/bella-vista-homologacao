@@ -5,7 +5,9 @@ import { MotionConfig } from 'framer-motion';
 import { Navigation } from '@/app/components/shared/Navigation';
 import { LoadingSkeleton } from '@/app/components/shared/LoadingSkeleton';
 import { Hero } from '@/app/components/hero/Hero';
+import { MediaExperience } from '@/app/components/media/MediaExperience';
 import { Showcase } from '@/app/components/showcase/Showcase';
+import { RegionGallery } from '@/app/components/location/RegionGallery';
 import { Location } from '@/app/components/location/Location';
 import { Simulator } from '@/app/components/simulator/Simulator';
 import { Progress } from '@/app/components/progress/Progress';
@@ -34,7 +36,9 @@ export default function HomePage() {
         />
         <main id='main-content'>
           <Hero copy={copy.hero} whatsappLink={whatsappLink} />
+          <MediaExperience locale={locale} />
           <Showcase copy={copy.showcase} />
+          <RegionGallery locale={locale} />
           <Location copy={copy.location} mapTitle={copy.map.title} />
           <Suspense fallback={<LoadingSkeleton />}>
             <Simulator
