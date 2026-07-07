@@ -8,6 +8,7 @@ import { Hero } from '@/app/components/hero/Hero';
 import { MediaExperience } from '@/app/components/media/MediaExperience';
 import { Showcase } from '@/app/components/showcase/Showcase';
 import { RegionGallery } from '@/app/components/location/RegionGallery';
+import { CityStories } from '@/app/components/location/CityStories';
 import { Location } from '@/app/components/location/Location';
 import { Simulator } from '@/app/components/simulator/Simulator';
 import { Progress } from '@/app/components/progress/Progress';
@@ -39,6 +40,7 @@ export default function HomePage() {
           <MediaExperience locale={locale} />
           <Showcase copy={copy.showcase} />
           <RegionGallery locale={locale} />
+          <CityStories locale={locale} />
           <Location copy={copy.location} mapTitle={copy.map.title} />
           <Suspense fallback={<LoadingSkeleton />}>
             <Simulator
