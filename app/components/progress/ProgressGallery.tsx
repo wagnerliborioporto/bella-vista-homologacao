@@ -69,7 +69,7 @@ export const ProgressGallery = ({ images, alt, reduceMotion }: Props) => {
         <button
           type='button'
           onClick={previous}
-          className='absolute left-3 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/48 text-white transition hover:bg-black/75'
+          className='absolute left-3 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/50 text-white transition hover:bg-black/75'
           aria-label='Foto anterior da obra'
         >
           <ChevronLeft className='h-5 w-5' />
@@ -77,7 +77,7 @@ export const ProgressGallery = ({ images, alt, reduceMotion }: Props) => {
         <button
           type='button'
           onClick={next}
-          className='absolute right-3 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/48 text-white transition hover:bg-black/75'
+          className='absolute right-3 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/50 text-white transition hover:bg-black/75'
           aria-label='Próxima foto da obra'
         >
           <ChevronRight className='h-5 w-5' />
