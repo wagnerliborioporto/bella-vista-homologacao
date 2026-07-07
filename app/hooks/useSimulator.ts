@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Locale, PresetKey, SimulatorResults, SimulatorValues } from '@/app/types';
-import { buildPdf, formatCurrency } from '@/app/lib/utils';
+import { formatCurrency } from '@/app/lib/utils';
+import { generateProfessionalSimulationPdf } from '@/app/lib/professionalPdf';
 
 type PdfCopy = {
   title: string;
@@ -96,33 +97,13 @@ export const useSimulator = ({ locale, reduceMotion, pdfCopy }: Options) => {
     setActivePreset(key);
   };
 
-  const handleDownloadPdf = () => {
-    const paybackLabel = results.paybackYears
-      ? `${results.paybackYears.toFixed(1)} ${pdfCopy.paybackUnit}`
-      : '-';
-    const lines = [
-      pdfCopy.title,
-      pdfCopy.subtitle,
-      '',
-      `${pdfCopy.propertyValue}: ${formatCurrency(values.propertyValue, locale)}`,
-      `${pdfCopy.dailyRate}: ${formatCurrency(values.dailyRate, locale)}`,
-      `${pdfCopy.occupancy}: ${values.occupancy}%`,
-      `${pdfCopy.monthlyCosts}: ${formatCurrency(values.monthlyCosts, locale)}`,
-      `${pdfCopy.platformFee}: ${values.platformFee}%`,
-      '',
-      `${pdfCopy.grossMonthly}: ${formatCurrency(results.grossMonthly, locale)}`,
-      `${pdfCopy.netMonthly}: ${formatCurrency(results.netMonthly, locale)}`,
-      `${pdfCopy.annualReturn}: ${results.annualReturn.toFixed(1)}%`,
-      `${pdfCopy.payback}: ${paybackLabel}`,
-    ];
-    const pdf = buildPdf(lines);
-    const blob = new Blob([pdf], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'simulacao-bella-vista.pdf';
-    link.click();
-    URL.revokeObjectURL(url);
+  const handleDownloadPdf = async () => {
+    await generateProfessionalSimulationPdf({
+      locale,
+      values,
+      results,
+      copy: pdfCopy,
+    });
   };
 
   const formatCurrencyValue = (value: number) => formatCurrency(value, locale);
