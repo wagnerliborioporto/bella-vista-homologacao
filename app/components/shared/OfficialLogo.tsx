@@ -60,7 +60,7 @@ export const OfficialLogo = () => {
       data-brand-logo='original'
       src={source}
       alt='Bella Vista Beach Residence'
-      className='h-14 w-auto max-w-[255px] object-contain md:h-16 md:max-w-[300px]'
+      className='h-auto w-[235px] max-w-none shrink-0 object-contain md:w-[255px]'
       onError={() => {
         if (resolvedLogo) {
           setResolvedLogo(null);
