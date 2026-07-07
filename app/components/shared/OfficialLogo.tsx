@@ -1,17 +1,29 @@
 'use client';
 
+import { useState } from 'react';
 import { officialLogoDataUrl } from '@/app/lib/officialBrand';
 
+const STATIC_LOGO_PATH = './bella-vista-logo-oficial.svg';
+
 /**
- * Exibe diretamente a arte oficial enviada, sem redesenho ou logo substituta.
- * A largura compensa somente a margem transparente usada para preservar a
- * proporção da mesma imagem dentro do PDF.
+ * Usa primeiro o arquivo estático da marca. Isso evita que uma string base64
+ * extensa seja processada dentro do JavaScript da página. A imagem incorporada
+ * permanece apenas como contingência caso o arquivo estático não carregue.
  */
-export const OfficialLogo = () => (
-  <img
-    data-brand-logo='original'
-    src={officialLogoDataUrl}
-    alt='Bella Vista Beach Residence'
-    className='h-auto w-[214px] max-w-none shrink-0 md:w-[244px]'
-  />
-);
+export const OfficialLogo = () => {
+  const [source, setSource] = useState(STATIC_LOGO_PATH);
+
+  return (
+    <img
+      data-brand-logo='original'
+      src={source}
+      alt='Bella Vista Beach Residence'
+      width={393}
+      height={103}
+      className='block h-auto w-[214px] shrink-0 object-contain md:w-[244px]'
+      onError={() => {
+        if (source !== officialLogoDataUrl) setSource(officialLogoDataUrl);
+      }}
+    />
+  );
+};
