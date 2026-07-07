@@ -5,6 +5,9 @@ import Image from 'next/image';
 import type { Locale } from '@/app/types';
 import { LanguageSwitcher } from '@/app/components/shared/LanguageSwitcher';
 
+const officialLogoUrl =
+  'https://bellavistaresidence.com.br/wp-content/uploads/2025/03/LOGO-BELLA-VISTA-BRANCO.webp';
+
 type Props = {
   labels: {
     location: string;
@@ -29,19 +32,21 @@ export const Navigation = ({
   onLocaleChange,
 }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
   return (
     <header className='fixed inset-x-0 top-0 z-50 overflow-visible border-b border-white/5 bg-[#07131D]/85 backdrop-blur-lg shadow-[0_8px_24px_rgba(5,12,18,0.35)] md:bg-[rgba(8,18,28,0.65)]'>
-      <nav className='relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3 text-white md:px-6 md:py-4 lg:py-6'>
-        <Image
-          src={`${basePath}/logo.png`}
-          alt='Bella Vista'
-          width={160}
-          height={48}
-          className='h-8 w-auto md:h-9 lg:h-10'
-          priority
-        />
+      <nav className='relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3 text-white md:px-6 md:py-4 lg:py-5'>
+        <a href='#inicio' aria-label='Bella Vista Beach Residence — início' className='shrink-0'>
+          <Image
+            src={officialLogoUrl}
+            alt='Bella Vista Beach Residence'
+            width={300}
+            height={110}
+            className='h-12 w-auto object-contain md:h-14 lg:h-16'
+            priority
+            unoptimized
+          />
+        </a>
         <div className='hidden items-center gap-6 text-xs uppercase tracking-[0.28em] text-white/80 md:flex lg:gap-8 lg:text-white/90'>
           <a
             href='#localizacao'
