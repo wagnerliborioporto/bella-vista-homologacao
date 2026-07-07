@@ -48,7 +48,7 @@ export default function HomePage() {
               whatsappLink={whatsappLink}
             />
           </Suspense>
-          <Progress copy={copy.progress} />
+          <Progress copy={copy.progress} locale={locale} />
           <FinalCta copy={copy.finalCta} whatsappLink={whatsappLink} />
           <Contact copy={copy.contact} whatsappLink={whatsappLink} />
         </main>
