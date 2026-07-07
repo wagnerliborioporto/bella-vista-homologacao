@@ -31,12 +31,12 @@ export const Navigation = ({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className='fixed inset-x-0 top-0 z-50 overflow-visible border-b border-white/5 bg-[#07131D]/92 backdrop-blur-lg shadow-[0_8px_24px_rgba(5,12,18,0.35)]'>
+    <header className='fixed inset-x-0 top-0 z-50 overflow-hidden border-b border-white/5 bg-[#07131D]/92 backdrop-blur-lg shadow-[0_8px_24px_rgba(5,12,18,0.35)]'>
       <nav className='relative mx-auto flex min-h-[88px] max-w-6xl items-center justify-between px-5 py-3 text-white md:min-h-[98px] md:px-6'>
         <a
           href='#inicio'
           aria-label='Bella Vista Beach Residence — início'
-          className='flex min-w-0 shrink-0 items-center'
+          className='flex h-14 min-w-0 max-w-[255px] shrink-0 items-center overflow-hidden md:h-16 md:max-w-[300px]'
         >
           <OfficialLogo />
         </a>
