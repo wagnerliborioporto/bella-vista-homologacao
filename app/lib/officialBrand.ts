@@ -10,18 +10,20 @@ export type WordPressMedia = {
   };
 };
 
-const officialLogoSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="470" height="120" viewBox="0 0 470 120" role="img" aria-label="Bella Vista Beach Residence">
-  <g fill="none" stroke="#C59B25" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="57" cy="60" r="47" stroke-width="4.5"/>
-    <path d="M19 53h72L38 91" stroke-width="4.5"/>
-    <path d="M25 42h61L47 68" stroke-width="4.5"/>
+const officialLogoSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="470" height="161" viewBox="0 0 470 161" role="img" aria-label="Bella Vista Beach Residence">
+  <g transform="translate(0 20)">
+    <g fill="none" stroke="#C59B25" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="57" cy="60" r="47" stroke-width="4.5"/>
+      <path d="M19 53h72L38 91" stroke-width="4.5"/>
+      <path d="M25 42h61L47 68" stroke-width="4.5"/>
+    </g>
+    <g fill="#C59B25">
+      <path d="M32 31c10-10 22-12 38-8-10 1-17 5-23 12-5-4-10-5-15-4Z"/>
+      <path d="M48 29c9-9 19-12 33-10-9 3-15 7-20 14-5-3-9-4-13-4Z" opacity=".9"/>
+    </g>
+    <text x="125" y="58" fill="#C59B25" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="31" font-weight="600" letter-spacing="4.8">BELLA VISTA</text>
+    <text x="128" y="84" fill="#C59B25" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="12.5" font-weight="500" letter-spacing="5.1">BEACH RESIDENCE</text>
   </g>
-  <g fill="#C59B25">
-    <path d="M32 31c10-10 22-12 38-8-10 1-17 5-23 12-5-4-10-5-15-4Z"/>
-    <path d="M48 29c9-9 19-12 33-10-9 3-15 7-20 14-5-3-9-4-13-4Z" opacity=".9"/>
-  </g>
-  <text x="125" y="58" fill="#C59B25" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="31" font-weight="600" letter-spacing="4.8">BELLA VISTA</text>
-  <text x="128" y="84" fill="#C59B25" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="12.5" font-weight="500" letter-spacing="5.1">BEACH RESIDENCE</text>
 </svg>`;
 
 export const officialLogoDataUrl =
