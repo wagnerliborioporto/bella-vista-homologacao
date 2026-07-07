@@ -1,12 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import type { Locale } from '@/app/types';
 import { LanguageSwitcher } from '@/app/components/shared/LanguageSwitcher';
-
-const officialLogoUrl =
-  'https://bellavistaresidence.com.br/wp-content/uploads/2025/03/LOGO-BELLA-VISTA-BRANCO.webp';
 
 type Props = {
   labels: {
@@ -23,6 +19,32 @@ type Props = {
   onLocaleChange: (value: Locale) => void;
 };
 
+const BellaVistaLogo = () => (
+  <div className='flex items-center gap-3 text-white'>
+    <svg
+      viewBox='0 0 64 64'
+      aria-hidden='true'
+      className='h-11 w-11 shrink-0 md:h-12 md:w-12 lg:h-14 lg:w-14'
+      fill='none'
+    >
+      <circle cx='32' cy='32' r='27' stroke='currentColor' strokeWidth='2' />
+      <path
+        d='M20 21h11.5c6.2 0 10 2.6 10 7 0 3-1.9 5-5 6.1 4 .9 6.5 3.5 6.5 7 0 5-4.3 8-11.3 8H20V21Zm10.5 11c3.5 0 5.4-1.1 5.4-3.2s-1.9-3.1-5.4-3.1h-4.9V32h4.9Zm.8 12.2c4 0 6.1-1.3 6.1-3.7 0-2.3-2.1-3.6-6.1-3.6h-5.7v7.3h5.7Z'
+        fill='currentColor'
+      />
+      <path d='M39 20h5.8L36 49h-5.8L39 20Z' fill='currentColor' opacity='0.92' />
+    </svg>
+    <div className='leading-none'>
+      <div className='text-[0.82rem] font-semibold tracking-[0.24em] md:text-[0.92rem] lg:text-[1rem]'>
+        BELLA VISTA
+      </div>
+      <div className='mt-1 text-[0.46rem] tracking-[0.34em] text-white/68 md:text-[0.52rem] lg:text-[0.57rem]'>
+        BEACH RESIDENCE
+      </div>
+    </div>
+  </div>
+);
+
 export const Navigation = ({
   labels,
   whatsappLink,
@@ -37,15 +59,7 @@ export const Navigation = ({
     <header className='fixed inset-x-0 top-0 z-50 overflow-visible border-b border-white/5 bg-[#07131D]/85 backdrop-blur-lg shadow-[0_8px_24px_rgba(5,12,18,0.35)] md:bg-[rgba(8,18,28,0.65)]'>
       <nav className='relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3 text-white md:px-6 md:py-4 lg:py-5'>
         <a href='#inicio' aria-label='Bella Vista Beach Residence — início' className='shrink-0'>
-          <Image
-            src={officialLogoUrl}
-            alt='Bella Vista Beach Residence'
-            width={300}
-            height={110}
-            className='h-12 w-auto object-contain md:h-14 lg:h-16'
-            priority
-            unoptimized
-          />
+          <BellaVistaLogo />
         </a>
         <div className='hidden items-center gap-6 text-xs uppercase tracking-[0.28em] text-white/80 md:flex lg:gap-8 lg:text-white/90'>
           <a
