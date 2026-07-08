@@ -31,7 +31,7 @@ export const Navigation = ({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className='fixed inset-x-0 top-0 z-50 overflow-hidden border-b border-white/5 bg-[#07131D]/92 backdrop-blur-lg shadow-[0_8px_24px_rgba(5,12,18,0.35)]'>
+    <header className='absolute inset-x-0 top-0 z-50 bg-transparent'>
       <nav className='relative mx-auto flex min-h-[88px] max-w-6xl items-center justify-between px-5 py-3 text-white md:min-h-[98px] md:px-6'>
         <a
           href='#inicio'
@@ -88,7 +88,7 @@ export const Navigation = ({
             aria-expanded={menuOpen}
             aria-controls='hero-menu'
             onClick={() => setMenuOpen((open) => !open)}
-            className='inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs uppercase tracking-[0.3em] text-white/85 transition hover:text-white'
+            className='inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-3 py-2 text-xs uppercase tracking-[0.3em] text-white/85 transition hover:text-white'
           >
             {menuLabel}
           </button>
@@ -96,7 +96,7 @@ export const Navigation = ({
       </nav>
 
       {menuOpen && (
-        <div id='hero-menu' className='border-t border-white/10 bg-[#07131D]/98 md:hidden'>
+        <div id='hero-menu' className='border-t border-white/10 bg-[#07131D]/96 md:hidden'>
           <div className='flex flex-col gap-4 px-6 py-5 text-xs uppercase tracking-[0.28em] text-white/75'>
             <a href='#localizacao' onClick={() => setMenuOpen(false)} className='hover:text-[#C9A13A]'>
               {labels.location}
